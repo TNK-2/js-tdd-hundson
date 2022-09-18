@@ -1,0 +1,17 @@
+name: TDD JS SAMPLE CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on:ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - user: actions/setup-node@v2
+      with:
+        node-version:16.x
+        cache: 'npm'
+    - run: npm ci
+    - run: npm test
+  
