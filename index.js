@@ -3,10 +3,15 @@ function add(a, b) {
 }
 
 function fizzBuzz(num) {
-  if ( num % 3 === 0) {
-    return 'Fizz';
-  } else if (num % 5 === 0) {
+  const canDivideByThree = num % 3 === 0;
+  const canDivideByFive = num % 5 === 0;
+
+  if (canDivideByThree && canDivideByFive) {
+    return 'FizzBuzz';
+  } else if (canDivideByFive) {
     return 'Buzz';
+  } else if (canDivideByThree) {
+    return 'Fizz';
   }
   return num.toString();
 }
